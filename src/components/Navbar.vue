@@ -1,37 +1,30 @@
 <template>
-  <nav
-    class="navbar navbar-expand-lg navbar-light"
-    style="background-color: #e3f2fd"
-  >
-    <div class="container-fluid">
-      <router-link class="navbar-brand" to="/">LOGO</router-link>
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-bs-toggle="collapse"
-        data-bs-target="#navbarTogglerDemo02"
-        aria-controls="navbarTogglerDemo02"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <router-link class="nav-link" aria-current="page" exact to="/"
-              >Home</router-link
-            >
-          </li>
-          <li class="nav-item" aria-current="page">
-            <router-link class="nav-link" to="/about">About</router-link>
-          </li>
-        </ul>
+  <div id="content">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+        <router-link class="navbar-brand" to="/">LOGO</router-link>
+        <button
+          type="button"
+          id="sidebarCollapse"
+          class="btn btn-info"
+          @click="toggle = !toggle"
+        >
+          <i class="navbar-toggler-icon"></i>
+        </button>
       </div>
-    </div>
-  </nav>
+    </nav>
+    <router-view />
+  </div>
+  <div class="overlay" v-bind:class="toggle ? '' : 'active'"></div>
 </template>
 
 <script>
-export default {};
+//importing bootstrap 5 Modules
+export default {
+  data() {
+    return {
+      toggle: true, //toggle variable
+    };
+  },
+};
 </script>

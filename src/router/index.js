@@ -3,8 +3,13 @@ import { createWebHistory, createRouter } from "vue-router";
 const routes = [
   {
     path: "/",
-    name: "pages.home",
-    component:  () => import("/src/components/pages/Home.vue"),
+    name: "pages.dashboard_FSO",
+    component:  () => import("/src/components/pages/Dasboard_FSO.vue"),
+  },
+  {
+    path: "/fso_cube",
+    name: "pages.FSO_Cube",
+    component:  () => import("/src/components/pages/FSO_Cube.vue"),
   },
   {
     path: "/about",
